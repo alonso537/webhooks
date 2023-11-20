@@ -11,6 +11,8 @@ function main() {
 
     const githubController = new GithubController()
 
+    app.use(express.json());
+
     app.post('/api/github', githubController.webhookhandler)
 
 

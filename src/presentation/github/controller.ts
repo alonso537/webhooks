@@ -7,8 +7,18 @@ export class GithubController  {
     ) {}
 
     webhookhandler = (req: Request, res: Response) => {
-        console.log('webhookhandler')
+        // console.log('webhookhandler')/
 
-        res.send('Hello World!')
+        const githubEvent = req.headers['x-github-event'] ?? '';
+        // const githubSignature = req.headers['x-hub-signature-256'] ?? '';
+        const payload = req.body
+
+        console.log('githubEvent', githubEvent);
+        
+
+        
+        
+
+        res.status(202).send('ok')
     }
 }
