@@ -1,5 +1,6 @@
 import express from 'express';
 import { envs } from './config/envs';
+import { GithubController } from './presentation/github/controller';
 
 (() => {
     main()
@@ -8,10 +9,9 @@ import { envs } from './config/envs';
 function main() {
     const app = express()
 
-    app.post('/api/github', (req, res) => {
-        res.send('Hello World!')
-    
-    })
+    const githubController = new GithubController()
+
+    app.post('/api/github', githubController.webhookhandler)
 
 
     app.listen(envs.PORT, () => {
