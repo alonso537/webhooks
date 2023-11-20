@@ -13,7 +13,10 @@ export class GithubController  {
         // const githubSignature = req.headers['x-hub-signature-256'] ?? '';
         const payload = req.body
 
-        console.log('githubEvent', githubEvent);
+        // console.log('githubEvent', githubEvent);
+
+        // console.log(JSON.stringify(payload));
+        
         
 
         
